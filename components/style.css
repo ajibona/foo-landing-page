@@ -204,7 +204,7 @@ nav ul li a:hover::before{
 }
 
 .heading-text::after{
-  content: url("/images/arrow-movement.svg");
+  content: url("../images/arrow-movement.svg");
   position: absolute;
   top: -110px;
   right: -90px;
