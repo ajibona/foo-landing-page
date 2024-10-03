@@ -53,12 +53,15 @@ header{
   display: flex;
   align-items: center;justify-content: space-between;
   padding: 39px 65px;
+  overflow: hidden;
+  z-index: 5;
 }
 
 .logo{
   display: flex;
   align-items: center;
   gap: 4px;
+  animation: logoanimation .8s ease-in-out;
 }
 
 .logo p{
@@ -66,6 +69,22 @@ header{
   font-weight: var(--fw-bold);
 }
 
+@keyframes logoanimation {
+  0%{
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+}
+
+nav{
+  animation: navanimation .8s ease-in-out;
+}
 nav ul{
   display: flex;
   align-items: center;
@@ -84,16 +103,30 @@ nav ul li a::before{
   height: 2px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--dark-text-color);
+  background-color: var(--cc-fast-color-h1);
   bottom: 0;
   transition: all .2s ease-in;
 }
+
 nav ul li a:hover::before{
   width: 100%;
 }
 
+@keyframes navanimation {
+  0%{
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .search-input{
   position: relative;
+  animation: inputanimation .8s ease-in-out;
 }
 .search-input input{
   width: 210px;
@@ -123,6 +156,19 @@ nav ul li a:hover::before{
   cursor: pointer;
 }
 
+
+@keyframes inputanimation {
+  0%{
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+}
 /* .search-input::placeholder */
 
 .hero-details{
@@ -134,12 +180,27 @@ nav ul li a:hover::before{
   padding-top: 105px;
 }
 
+.right-section{
+  animation: backgroundimage 1s ease-in;
+}
+
+@keyframes backgroundimage {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
 .heading-text{
   display: flex;
   align-items: center;
   gap: 18px;
   margin-bottom: 10px;
   position: relative;
+  animation: headinganimation .7s ease-in;
 }
 
 .heading-text::after{
@@ -159,10 +220,23 @@ nav ul li a:hover::before{
   line-height: .9;
 }
 
+@keyframes headinganimation {
+  0%{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 article{
   color: var(--cc-light-paragrah-text);
   font-size: 1.2rem;
   margin-bottom: 30px;
+  animation: headinganimation .7s ease-in;
 }
 
 button{
@@ -188,6 +262,7 @@ button{
   align-items: center;
   gap: 28px;
   margin-bottom: 69px;
+  animation: headinganimation .7s ease-in;
 }
 
 .btn-play-icon{
@@ -220,6 +295,9 @@ button{
   width: 100%;
 }
 
+.rate-section{
+  animation: headinganimation .8s ease-in;
+}
 .rate-icon img{
   margin-bottom: 5px;
 }
